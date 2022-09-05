@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #title {
+            color: yellow;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <h1 id="title">Hello</h1>
+    <p id="subtitle">How are you?</p>
+    <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li>No link</li>
+    </ul>
+
+    <script>
+
+        const title = document.getElementById("title");
+        const subtitle = document.getElementById("subtitle");
+        
+        // console.log(title);
+        
+        // title.style.color = "red";
+        // subtitle.style.backgroundColor = "lime";
+
+        // subtitle.innerHTML = subtitle.innerHTML.toUpperCase();
+
+        const something = subtitle.innerHTML;
+        const upperSomething = something.toUpperCase();
+        subtitle.innerHTML = upperSomething;
+
+        const x = "Helder";
+        x.toUpperCase();
+
+        console.log(x);
+
+    </script>
+
+</body>
+</html>

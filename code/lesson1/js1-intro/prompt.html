@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Ask the user for 2 numbers using the prompt funciton
+        // Show the results of the following calcs of those 2 numbers
+        // Sum
+        // Subtraction
+        // Multiplacation
+        // Division
+        // Remainder
+
+        const num1 = prompt("First number!") * 1;
+        const num2 = prompt("Second number!") * 1;
+
+        const sum = num1 + num2;
+        const sub = num1 - num2;
+        const mult = num1 * num2;
+        const divi = num1 / num2;
+        const modu = num1 % num2;
+
+        // document.write(num1 + " + " + num2 + " = " + sum + "<br>");
+        // document.write(num1 + " - " + num2 + " = " + sub + "<br>");
+        // document.write(num1 + " x " + num2 + " = " + mult + "<br>");
+        // document.write(num1 + " / " + num2 + " = " + divi + "<br>");
+        // document.write(num1 + " mod " + num2 + " = " + modu + "<br>");
+
+        document.write(`${num1} + ${num2} = ${sum}<br>`);
+        document.write(`${num1} - ${num2} = ${sub}<br>`);
+        document.write(`${num1} x ${num2} = ${mult}<br>`);
+        document.write(`${num1} / ${num2} = ${divi}<br>`);
+        document.write(`${num1} mod ${num2} = ${modu}<br>`);
+
+        // Strings and concatenation
+        const firstName = "Helder";
+        const lastName = 'Pereira';
+        const name = firstName + " " + lastName;
+
+        // Template Literal
+        const example = `Hello my name is ${name}. How are you doing?`;
+
+
+
+    </script>
+</body>
+</html>
