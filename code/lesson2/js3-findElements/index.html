@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clickMeButton {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickMeButton">Click me!</button>
+    
+    <script>
+        
+
+        function buttonClicked() {
+            // alert("Congratulations! You clicked a button... 😎");
+            if (clickMeButton.style.backgroundColor == "red") {
+                clickMeButton.style.backgroundColor = "blue";
+            } else {
+                clickMeButton.style.backgroundColor = "red";
+            }
+        }
+        
+
+        const clickMeButton = document.getElementById("clickMeButton");
+
+        clickMeButton.style.color = "blue";
+        clickMeButton.style.backgroundColor = "azure";
+
+        clickMeButton.addEventListener("click", buttonClicked);
+
+        // STEP 1
+        // Replicate what I did
+
+        // STEP 2
+        // When the user clicks the button
+        // Change the backgroundColor of the button
+
+        // Step3
+        // Alternate the backgroundColor of the butto
+        // between 2 different colors
+        // For example blue -> red -> blue
+    </script>
+</body>
+</html>

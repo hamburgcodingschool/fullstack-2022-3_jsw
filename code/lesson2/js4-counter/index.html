@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttonUp">Go Up</button>
+    <button id="buttonDown">Go Down</button>
+
+    <p id="pCounter1">Counter 1: 0</p>
+    <p>Counter 2: 0</p>
+
+    <label>
+        <input type="radio" name="rg1" id="radioButton1" checked> Counter 1
+    </label>
+    <label>
+        <input type="radio" name="rg1" id="radioButton2"> Counter 2
+    </label>
+
+    <script>
+        // 1 - Everytime you click the button update the
+        // paragraph so it shows how many times the button was clicked
+
+        // 2 - Create a new button `Go Down` and the numbe rof times
+        // decreases instead
+
+        // 3 - add a new paragraph for a new counter
+        // and radio buttons
+
+        function goUp() {
+            // counter = counter + 1;
+            // counter += 1;
+            counter ++;
+            pCounter1.innerHTML = `Counter 1: ${counter}`;
+
+            // just to figure things out
+            // try to alert which radioButton is checked
+            if (radioButton1.checked) {
+
+            }
+        }
+
+        function goDown() {
+            counter --;
+            pCounter1.innerHTML = `Counter 1: ${counter}`;
+        }
+
+        let counter = 0;
+
+        const buttonUp = document.getElementById("buttonUp");
+        const buttonDown = document.getElementById("buttonDown");
+        const radioButton1 = document.getElementById("radioButton1");
+        const radioButton2 = document.getElementById("radioButton2");
+
+        const pCounter1 = document.getElementById("pCounter1");
+
+        buttonUp.addEventListener("click", goUp);
+        buttonDown.addEventListener("click", goDown);
+
+    </script>
+</body>
+</html>
