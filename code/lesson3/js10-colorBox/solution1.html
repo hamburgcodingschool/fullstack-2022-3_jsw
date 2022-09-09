@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            border: solid 2px black;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="colorBox"></div>
+    <button id="buttonChangeColor">Change Color</button>
+
+    <script>
+        const colorBox = document.getElementById("colorBox");
+        const buttonChangeColor = document.getElementById("buttonChangeColor");
+        
+        colorBox.style.backgroundColor = "red";
+
+        buttonChangeColor.addEventListener("click", function() {
+
+            if (colorBox.style.backgroundColor === "red") {
+                colorBox.style.backgroundColor = "green";
+            } else if (colorBox.style.backgroundColor === "green") {
+                colorBox.style.backgroundColor = "blue";
+            } else if (colorBox.style.backgroundColor === "blue") {
+                colorBox.style.backgroundColor = "red";
+            } else {
+                colorBox.style.backgroundColor = "green";
+            }
+        });
+
+        
+
+        // EXERCISE
+        // Click the button to change the backgroundColor of the box
+        // between Red, Green and Blue
+        // R -> G -> B -> R -> ...
+    </script>
+</body>
+</html>

@@ -21,13 +21,29 @@
     </label>
 
     <script>
-        let counter = 0;
+        let counter1 = 0;
+        let counter2 = 0;
 
         function goUp() {
+            console.log(radioButton1);
+            if (radioButton1.checked) {
+                counter1++;
+                pCounter1.innerHTML = `Counter 1: ${counter1}`;
+            } else {
+                counter2++;
+                pCounter2.innerHTML = `Counter 2: ${counter2}`;
+            }
         }
 
         function goDown() {
-        }        
+            if (radioButton1.checked) {
+                counter1--;
+                pCounter1.innerHTML = `Counter 1: ${counter1}`;
+            } else {
+                counter2--;
+                pCounter2.innerHTML = `Counter 2: ${counter2}`;
+            }
+        }
 
         const buttonUp = document.getElementById("buttonUp");
         const buttonDown = document.getElementById("buttonDown");
