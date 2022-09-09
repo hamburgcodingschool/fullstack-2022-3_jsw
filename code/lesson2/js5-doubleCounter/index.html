@@ -10,25 +10,31 @@
     <button id="buttonUp">Go Up</button>
     <button id="buttonDown">Go Down</button>
 
-    <p id="pCounter">Counter: 0</p>
+    <p id="pCounter1">Counter 1: 0</p>
+    <p id="pCounter2">Counter 2: 0</p>
+
+    <label>
+        <input type="radio" name="rg1" id="radioButton1" checked> Counter 1
+    </label>
+    <label>
+        <input type="radio" name="rg1" id="radioButton2"> Counter 2
+    </label>
 
     <script>
+        let counter = 0;
+
         function goUp() {
-            counter ++;
-            pCounter.innerHTML = `Counter: ${counter}`;
         }
 
         function goDown() {
-            counter --;
-            pCounter.innerHTML = `Counter: ${counter}`;
-        }
-
-        let counter = 0;
+        }        
 
         const buttonUp = document.getElementById("buttonUp");
         const buttonDown = document.getElementById("buttonDown");
-
-        const pCounter = document.getElementById("pCounter");
+        const radioButton1 = document.getElementById("radioButton1");
+        const radioButton2 = document.getElementById("radioButton2");
+        const pCounter1 = document.getElementById("pCounter1");
+        const pCounter2 = document.getElementById("pCounter2");
 
         buttonUp.addEventListener("click", goUp);
         buttonDown.addEventListener("click", goDown);
