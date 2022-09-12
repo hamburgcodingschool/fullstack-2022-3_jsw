@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const numbers = [];
+        
+        for (let i = 0; i < 6; i++) {
+            const number1 = generateRandomNumber(0, 5);
+            
+            numbers[i] = number1;
+        }
+
+        document.write(numbers);
+        console.log(numbers);
+
+    </script>
+</body>
+</html>

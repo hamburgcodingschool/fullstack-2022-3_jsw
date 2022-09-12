@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table {
+            border: solid 5px black;
+            background-color: darkslategray;
+            width: 200px;
+            height: 300px;
+        }
+
+        #mainWrapper {
+            display: flex;
+            width: 400px;
+            margin: 50px auto;
+        }
+
+        .chairs {
+            border: solid 2px black;
+            background-color: lightslategray;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 40px 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div id="mainWrapper">
+        <div class="chairWrapper">
+            <div id="chair0" class="chairs">Augustina</div>
+            <div id="chair1" class="chairs">Andi</div>
+            <div id="chair2" class="chairs">Celine</div>
+        </div>
+        <div id="table"></div>
+        <div class="chairWrapper">
+            <div id="chair3" class="chairs">Stefan</div>
+            <div id="chair4" class="chairs">Rene</div>
+            <div id="chair5" class="chairs">Ringo</div>
+        </div>
+    </div>
+
+    <script>
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const names = ["Augustina", "Andi", "Celine", "Stefan", "Rene", "Ringo"];
+        const assesInChairs = [];
+        
+        while (assesInChairs.length < 6) {
+            const randomIndex = generateRandomNumber(0, names.length - 1);
+            const name = names[randomIndex];
+            
+            if (!assesInChairs.includes(name)) {
+                assesInChairs.push(name);
+            }
+        }
+
+        const chair0 = document.getElementById("chair0");
+        const chair1 = document.getElementById("chair1");
+        const chair2 = document.getElementById("chair2");
+        const chair3 = document.getElementById("chair3");
+        const chair4 = document.getElementById("chair4");
+        const chair5 = document.getElementById("chair5");
+
+        chair0.innerHTML = assesInChairs[0];
+        chair1.innerHTML = assesInChairs[1];
+        chair2.innerHTML = assesInChairs[2];
+        chair3.innerHTML = assesInChairs[3];
+        chair4.innerHTML = assesInChairs[4];
+        chair5.innerHTML = assesInChairs[5];
+
+
+    </script>
+
+</body>
+</html>

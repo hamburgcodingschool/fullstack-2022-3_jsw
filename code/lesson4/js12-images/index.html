@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #image1 {
+            border: dotted 5px pink;
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        #div1 {
+            border: dotted 15px red;
+            width: 200px;
+            height: 200px;
+            background-image: url(./images/homer1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <img id="image1" src="./images/homer1.jpg">
+    <div id="div1"></div>
+
+    <button id="button1">Change Image</button>
+
+    <script>
+        const button1 = document.getElementById("button1");
+        const image1 = document.getElementById("image1");
+        const div1 = document.getElementById("div1");
+
+        button1.addEventListener("click", function() {
+            image1.src = "./images/homer2.webp";
+            div1.style.backgroundImage = "url(./images/homer2.webp)";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            border: solid 2px black;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="colorBox"></div>
+    <button id="previousColorButton">Previous Color</button>
+    <button id="nextColorButton">Next Color</button>
+
+    <script>
+        const colorBox = document.getElementById("colorBox");
+        const previousColorButton = document.getElementById("previousColorButton");
+        const nextColorButton = document.getElementById("nextColorButton");
+        
+        let counter = 0;
+        const colors = ["red", "green", "blue", "yellow", "pink"];
+
+        previousColorButton.addEventListener("click", function() {
+            if (counter <= 0) {
+                alert("Already at the start!");
+                return;
+            }
+            
+            counter --;
+
+            colorBox.innerHTML = counter;
+            colorBox.style.backgroundColor = colors[counter];
+        });
+
+        nextColorButton.addEventListener("click", function() {
+            if (counter >= colors.length - 1) {
+                alert("Sorry no more!");
+                return;
+            }
+            
+            counter++;
+
+            colorBox.innerHTML = counter;
+            colorBox.style.backgroundColor = colors[counter];
+        });
+    </script>
+</body>
+</html>

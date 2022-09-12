@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateRandomArray(size, minValue, maxValue) {
+            const numbers = [];
+
+            for (let i = 0; i < size; i++) {
+                let randomNumber = generateRandomNumber(minValue, maxValue);
+                
+                while (numbers.includes(randomNumber)) {
+                    randomNumber = generateRandomNumber(minValue, maxValue);
+                }
+                
+                numbers[i] = randomNumber;
+            }
+            
+            return numbers;
+        }
+
+
+        // THIS IS AWESOME BUT I CAN ALSO JUST USE `includes`
+        // function containsValue(needle, haystack) {
+        //     for (let i = 0; i < haystack.length; i++) {
+        //         if (needle === haystack[i]) {
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
+
+        const numbers = generateRandomArray(6, 1, 50);
+        const stars = generateRandomArray(2, 1, 12)
+
+        document.write(numbers + " - " + stars);
+
+
+
+    </script>
+</body>
+</html>

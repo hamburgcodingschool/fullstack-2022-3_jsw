@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function generateRandomNumber(min, max) {
+        //     let x = Math.random();
+
+        //     x = x * (max - min + 1);
+
+        //     x = x + min;
+
+        //     x = Math.floor(x);
+
+        //     return x;
+        // }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+
+        // EXERCISE
+        // 0.1 - Display 2 random numbers on screen
+        // 0.2 - Display 10 random numbers on screen (use a loop)
+        // 1 - Generate an array of 10 Random Numbers between 0 and 9
+        // 2 - Display it Super Nicely on Screen
+
+        // document.write(generateRandomNumber(0, 9) + "<br>");
+        // document.write(generateRandomNumber(0, 9) + "<br>");
+
+
+        const number = 45.74567;
+        const roundedNumber = Math.round(number);
+
+        document.write(roundedNumber + "<br>");
+        document.write(Math.round(number) + "<br>");
+        document.write(Math.PI + "<br>");
+        document.write(Math.random() + "<br>");
+
+        const newNumber = generateRandomNumber(0, 9);
+
+        document.write(newNumber + "<br>");
+        document.write(generateRandomNumber(0, 9) + "<br>");
+
+
+
+    </script>
+</body>
+</html>
