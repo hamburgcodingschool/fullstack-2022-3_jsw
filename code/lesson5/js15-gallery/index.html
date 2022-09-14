@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #galleryWrapper {
+            border: solid 2px blue;
+            width: 500px;
+            min-height: 100px;
+            margin: 20px auto 0;
+
+            display: flex;
+            align-items: center;
+            /* flex-direction: row; */
+        }
+
+        #imgBox {
+            width: 380px;
+            height: 380px;
+            object-fit: contain;
+            background-color: pink;
+        }
+
+        #galleryWrapper > button {
+            width: 60px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="galleryWrapper">
+        <button id="buttonPrev">Prev</button>
+        <img id="imgBox">
+        <button id="buttonNext">Next</button>
+    </div>
+
+    <script>
+        function updateImage() {
+            imgBox.src = "./images/" + images[counter];
+        }
+
+        const buttonPrev = document.getElementById("buttonPrev");
+        const buttonNext = document.getElementById("buttonNext");
+        const imgBox = document.getElementById("imgBox");
+
+        const images = [
+            "homer1.jpg",
+            "homer2.webp",
+            "homer3.jpg"
+        ];
+        let counter = 0;
+        updateImage();
+
+        buttonPrev.addEventListener("click", function() {
+            counter--;
+            if (counter < 0) {
+                counter = images.length - 1;
+            }
+            updateImage();
+        });
+
+        buttonNext.addEventListener("click", function() {
+            counter++;
+            if (counter >= images.length) {
+                counter = 0;
+            }
+            updateImage();
+        });
+
+    </script>
+</body>
+</html>

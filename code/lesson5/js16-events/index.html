@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttonA">A</button>
+    <button id="buttonB">B</button>
+    <button id="buttonC">C</button>
+    <script>
+        const buttonA = document.querySelector("#buttonA");
+        const buttonB = document.querySelector("#buttonB");
+        const buttonC = document.querySelector("#buttonC");
+        
+        function handleButton(event) {
+            const letter = event.target.innerHTML;
+            alert(`YOU JUST CLICK THE ${letter} BUTTON!!!!!`);
+        }
+
+        buttonA.addEventListener("click", handleButton);
+        buttonB.addEventListener("click", handleButton);
+        buttonC.addEventListener("click", handleButton);
+        
+    </script>
+</body>
+</html>

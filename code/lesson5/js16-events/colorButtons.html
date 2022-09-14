@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #boxDiv {
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="boxDiv"></div>
+    <button>red</button>
+    <button>green</button>
+    <button>blue</button>
+    <button>yellow</button>
+    <button>pink</button>
+    <button>bisque</button>
+    <button>#F134DD</button>
+    
+    <script>
+        const buttons = document.querySelectorAll("button");
+        const boxDiv = document.querySelector("#boxDiv");
+        
+        function handleButton(event) {
+            const colorName = event.target.innerHTML;
+
+            boxDiv.innerHTML = colorName;
+            boxDiv.style.backgroundColor = colorName;
+            
+            // for (let i = 0; i < buttons.length; i++) {
+            //     buttons[i].style.backgroundColor = "";    
+            // }
+
+            // event.target.style.backgroundColor = colorName;
+        }
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", handleButton);
+        }
+
+    </script>
+</body>
+</html>
