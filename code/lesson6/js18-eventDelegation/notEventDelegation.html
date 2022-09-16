@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fruitList > li {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <ul id="fruitList">
+        <li>Bananas</li>
+        <li>Apples</li>
+        <li>Oranges</li>
+        <li>Passionfruits</li>
+        <li>I Dunno... some other fruit... it;s not like i'm a fruitlogist... ok ok Kiwi</li>
+    </ul>
+
+    <script>
+        const fruitListLis = document.querySelectorAll("#fruitList > li");
+
+        for (let i = 0; i < fruitListLis.length; i++) {
+            const listItem = fruitListLis[i];
+
+            listItem.addEventListener("click", function(event) {
+                alert(event.target.innerHTML);
+            });
+        }
+
+
+    </script>
+
+</body>
+</html>

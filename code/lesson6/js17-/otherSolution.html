@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="item" id="inputText">
+    <button id="buttonAdd">Add</button>
+
+    <ul id="listItems">
+    </ul>
+
+    <script>
+        function fillList() {
+            listItems.innerHTML = "";
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                listItems.innerHTML += `<li>${item}</li>`;
+            }
+        }
+
+        const inputText = document.querySelector("#inputText");
+        const buttonAdd = document.querySelector("#buttonAdd");
+        const listItems = document.querySelector("#listItems");
+
+        const items = ["Bananas", "Apples"];
+        fillList();
+
+        
+
+        buttonAdd.addEventListener("click", function() {
+            if (inputText.value.length === 0) {
+                alert("Empty String!");
+                return;
+            }
+
+            items.push(inputText.value);
+            inputText.value = "";
+            console.log(items);
+
+            fillList();
+        });
+        
+        
+
+        // Exercise 1
+        // Everytime you click the add button, add a new String to the array of Items.
+    </script>
+</body>
+</html>
