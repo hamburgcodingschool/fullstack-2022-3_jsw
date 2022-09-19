@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names = ["Bob", "Jane", "Alicia", "John", "Rene", "Donald", "Goofy", "Daisy", "Zack", "Maria"];        
+        // EXERCISE 1
+        // Sort the names array in alphabetical order
+        
+        names.sort();
+        console.log(names);
+        document.write(names);
+
+        
+
+        const ages = [2, 12, 100, 23, 43, 31, 54, 100, 33, 21, 54, 20];
+        // EXERCISE 2
+        // Sort the ages array in ascending order
+
+        ages.sort(function(number, otherNumber) {
+            // if (number > otherNumber) {
+            //     return 1;
+            // } else if (number < otherNumber) {
+            //     return -1;
+            // } else {
+            //     return 0;
+            // }
+            return number - otherNumber;
+        });
+
+        console.log(ages);
+    </script>
+</body>
+</html>

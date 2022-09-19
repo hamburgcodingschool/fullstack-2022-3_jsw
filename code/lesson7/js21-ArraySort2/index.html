@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            width: auto;
+            background-color: #EBEBEB;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px gray;
+
+            float: left;
+            padding: 20px;
+            border: solid 2px black;
+            margin: 10px;
+        }
+
+        .card > table {
+            border-spacing: 0;
+        }
+
+        .card th, .card td {
+            padding: 5px 10px;
+        }
+
+        .card th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="card">
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>Helder</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>41</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>Porto</td>
+            </tr>
+        </table>
+
+    </div> -->
+
+
+    <div id="outputBox"></div>
+
+    <script>
+        function createLine(person) {
+            const output = `<p>${person.name} is ${person.age} from ${person.city}</p>`;
+            return output;
+        }
+
+        function createCard(person) {
+            const output = `
+            <div class="card">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td>${person.name}</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>${person.age}</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>${person.city}</td>
+                    </tr>
+                </table>
+            </div>`;
+            return output;
+        }
+
+
+        const people = [
+            {
+                name: "Helder",
+                age: 41,
+                city: "Porto"
+            },
+            {
+                name: "Bob",
+                age: 30,
+                city: "N.Y."
+            },
+            {
+                name: "Hannah",
+                age: 32,
+                city: "Hamburg"
+            },
+            {
+                name: "Charlie",
+                age: 73,
+                city: "London"
+            },
+            {
+                name: "Andreas",
+                age: 23,
+                city: "Berlin"
+            },
+            {
+                name: "Freya",
+                age: 16,
+                city: "Oslo"
+            }
+        ];
+        
+        // Exercise to have fun with!
+        // 1 - Print all the names in the people Array.
+        // console.log(people[0].name);
+        // console.log(people[1].name);
+        // console.log(people[2].name);
+        // console.log(people[3].name);
+        // console.log(people[4].name);
+        // console.log(people[5].name);
+
+        // for (let i = 0; i < people.length; i++) {
+        //     console.log(people[i].name);
+        // }
+
+        // 2 - Print all the info in the people Array (be creative use HTML and CSS)
+        const outputBox = document.querySelector("#outputBox");
+        for (let i = 0; i < people.length; i++) {
+            // const output = `<p>${people[i].name} is ${people[i].age} from ${people[i].city}</p>`;
+            // const output = createLine(people[i]);
+            const output = createCard(people[i]);
+            
+            console.log(output);
+            outputBox.innerHTML += output;
+        }
+
+        // 3 - Sort the people Array by name in Alphabetical Order
+        //     Print all the info in the people Array (be creative use HTML and CSS)
+
+
+        // 4 - Sort the people Array by age in ascending Order
+        //     Print all the info in the people Array (be creative use HTML and CSS)
+    </script>
+</body>
+</html>

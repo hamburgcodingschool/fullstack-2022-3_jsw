@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>POJO</h1>
+    <h2>Plain Old Javascript Object</h2>
+
+    <script>
+        const person = {
+            name: "Helder",
+            age: 41,
+            city: "Porto"
+        };
+
+        const otherPerson = {
+            name: "Bob",
+            age: 30,
+            city: "N.Y."
+        };
+
+        // Exercise
+        // Compare the ages of both people
+        // Print all the information of the oldest person only
+
+        let output;
+
+        if (person.age > otherPerson.age) {
+            output = `The oldest is ${person.name} from ${person.city} who is ${person.age} years old.`;
+        } else if (person.age < otherPerson.age) {
+            output = `The oldest is ${otherPerson.name} from ${otherPerson.city} who is ${otherPerson.age} years old.`;
+        } else {
+            output = `They're both ${person.age} years old.`;
+        }
+
+        alert(output);
+    </script>
+</body>
+</html>

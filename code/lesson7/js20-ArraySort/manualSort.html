@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortTheArray(array, callback) {
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array.length; j++) { 
+                    const result = callback(array[j], array[j+1]);
+                    if (result > 0) {
+                        let temp = array[j];
+                        array[j] = array[j+1];
+                        array[j+1] = temp;
+                    }
+                }
+            }
+            return array;
+        }
+
+        const ages = [2, 12, 100, 23, 43, 31, 54, 100, 33, 21, 54, 20];
+
+        sortTheArray(ages, function(a, b) {
+            return a - b;
+        });
+
+        console.log(ages);
+
+    </script>
+</body>
+</html>
