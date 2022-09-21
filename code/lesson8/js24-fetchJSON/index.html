@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="outputBox"></div>
+
+    <script>
+        function createLine(person) {
+            const output = `<p>${person.name} is ${person.age} from ${person.city}</p>`;
+            return output;
+        }
+
+        function createCard(person) {
+            const output = `
+            <div class="card">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td>${person.name}</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>${person.age}</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>${person.city}</td>
+                    </tr>
+                </table>
+            </div>`;
+            return output;
+        }
+
+
+        function fillList(people) {
+            const outputBox = document.querySelector("#outputBox");
+            for (let i = 0; i < people.length; i++) {
+                
+                const output = createCard(people[i]);
+                
+                console.log(output);
+                outputBox.innerHTML += output;
+            }
+        }
+
+        
+
+        fetch("./people.json").then(function(response) {
+            response.json().then(function (result) {
+                fillList(result);
+            });
+        });
+
+        
+
+        
+
+    </script>
+</body>
+</html>

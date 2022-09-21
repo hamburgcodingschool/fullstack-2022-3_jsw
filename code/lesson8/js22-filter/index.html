@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EXERCISE 1
+        // Given an array of numbers remove all numbers smaller than 5
+
+        const array = [12, 1, 4, 12, 43, 2, 4, 5, 2, 4, 10, 100];
+
+        const filteredArray = array.filter(function(value) {
+            // if (value < 5) {
+            //     return false;
+            // } else {
+            //     return true;
+            // }
+
+            return value >= 5;
+        });
+
+        console.log(array);
+        console.log(filteredArray);
+
+
+        // EXERCISE 2
+        // From the previous array of people remove all the people who are younger than 20
+        const people = [
+            {
+                name: "Helder",
+                age: 41,
+                city: "Porto"
+            },
+            {
+                name: "Bob",
+                age: 30,
+                city: "N.Y."
+            },
+            {
+                name: "Hannah",
+                age: 32,
+                city: "Hamburg"
+            },
+            {
+                name: "Charlie",
+                age: 73,
+                city: "London"
+            },
+            {
+                name: "Andreas",
+                age: 23,
+                city: "Berlin"
+            },
+            {
+                name: "Freya",
+                age: 16,
+                city: "Oslo"
+            }
+        ];
+
+        const filteredPeople = people.filter(function(value) {
+            // return value.age >= 20;
+            return value.name.length < 6;
+        });
+
+        console.log(people);
+        console.log(filteredPeople);
+
+    </script>
+</body>
+</html>

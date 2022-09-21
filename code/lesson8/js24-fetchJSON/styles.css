@@ -1,0 +1,27 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    width: auto;
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+
+    float: left;
+    padding: 20px;
+    border: solid 2px black;
+    margin: 10px;
+}
+
+.card > table {
+    border-spacing: 0;
+}
+
+.card th, .card td {
+    padding: 5px 10px;
+}
+
+.card th {
+    text-align: left;
+}
