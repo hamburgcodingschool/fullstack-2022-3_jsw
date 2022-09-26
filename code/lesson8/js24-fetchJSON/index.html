@@ -37,7 +37,6 @@
             return output;
         }
 
-
         function fillList(people) {
             const outputBox = document.querySelector("#outputBox");
             for (let i = 0; i < people.length; i++) {
@@ -49,17 +48,11 @@
             }
         }
 
-        
-
         fetch("./people.json").then(function(response) {
             response.json().then(function (result) {
                 fillList(result);
             });
         });
-
-        
-
-        
 
     </script>
 </body>
