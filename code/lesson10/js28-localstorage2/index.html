@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputName" placeholder="name">
+    <input id="inputAge" placeholder="age">
+    <input id="inputCity" placeholder="city">
+    <button id="buttonAdd">ADD</button>
+
+    <ul id="personList">
+    </ul>
+
+    <script>
+        let people = [
+            // {
+            //     name: "Whoever",
+            //     age: "41",
+            //     city: "Porto"
+            // },
+            // {
+            //     name: "BOB",
+            //     age: "1",
+            //     city: "NY"
+            // },
+            // {
+            //     name: "marie",
+            //     age: "51",
+            //     city: "Paris"
+            // },
+            // {
+            //     name: "Joe",
+            //     age: "21",
+            //     city: "London"
+            // },
+            // {
+            //     name: "Montana",
+            //     age: "30",
+            //     city: "Austin"
+            // },
+            // {
+            //     name: "Martha",
+            //     age: "55",
+            //     city: "London"
+            // }
+        ];
+            
+        const inputName = document.querySelector("#inputName");
+        const inputAge = document.querySelector("#inputAge");
+        const inputCity = document.querySelector("#inputCity");
+        const buttonAdd = document.querySelector("#buttonAdd");
+        const personList = document.querySelector("#personList");
+
+        function fillList() {
+            let lis = "";
+            for (let i = 0; i < people.length; i++) {
+                // Deconstruct object inside the i position of the array.
+                const { name, age, city } = people[i];
+                lis += `<li>${name}, ${age}, ${city} <button data-pos="${i}">🗑</button></li>`;
+            }
+            personList.innerHTML = lis;
+        }
+
+        function save() {
+            const stringyPeople = JSON.stringify(people);
+            localStorage.setItem("people", stringyPeople);
+        }
+
+        function load() {
+            const stringyPeople = localStorage.getItem("people");
+            people = JSON.parse(stringyPeople);
+        }
+
+        buttonAdd.addEventListener("click", function() {
+            const newPerson = {
+                name: inputName.value,
+                age: parseInt(inputAge.value),
+                city: inputCity.value
+            }
+            people.push(newPerson);
+            fillList();
+            save();
+        });
+
+        personList.addEventListener("click", function(event) {
+            if (event.target.tagName !== "BUTTON") {
+                return;
+            }
+
+            const button = event.target;
+            const index = button.dataset.pos;
+
+            people.splice(index, 1);
+            fillList();
+            save();
+
+        });
+
+        load();
+        fillList();
+
+    </script>
+
+</body>
+</html>
