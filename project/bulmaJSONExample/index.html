@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            Hello World
+          </h1>
+          <p class="subtitle">
+            My first website with <strong>Bulma</strong>!
+          </p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <div class="container">
+            <div class="columns" id="cardContainer">
+            </div>
+        </div>
+      </section>
+
+      <script>
+
+        function createCard(card) {
+            const cardTemplate = `
+            <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                    <img src="${card.image}" alt="${card.imageAltText}">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                        <img src="${card.thumbnail}" alt="${card.thumbnailAltText}">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">${card.name}</p>
+                        <p class="subtitle is-6">${card.username}</p>
+                    </div>
+                    </div>
+                
+                    <div class="content">${card.htmlContent}</div>
+                </div>
+                </div>
+            </div>`;
+            return cardTemplate;
+        }
+
+        function renderCards(cards) {
+
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                cardContainer.innerHTML += createCard(card);
+            }
+
+        }
+        
+        const cardContainer = document.querySelector("#cardContainer");
+        fetch("./data.json")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                renderCards(result);
+            })
+            .catch(function(error) {
+                alert("OH NOOOO!");
+            })
+            
+      </script>
+</body>
+</html>
